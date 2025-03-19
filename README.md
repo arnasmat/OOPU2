@@ -1,12 +1,13 @@
-# OOPUzduotis1 (Studentų surašymo ir skirstymo programa) - v1.0
+# OOPU2 (Studentų surašymo ir skirstymo programa) - v1.1
 Studentų pažymių surašymo (ranka, automatiškai sugeneruojamų arba iš failo) bei vidurkių skaičiavimo ir studentų
 kategorizacijos į dvi grupes programa </br>
 
 # 🛠️ Projekto kompiliavimo instrukcijos
-1. Atsisiųsti [CMake (Bent v. 3.29)](https://cmake.org/download/)
-2. [Klonuoti šio projekto direktoriją](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-3. Atsidaryti komandinę eilutę (cmd arba powershell) ir į ją įvesti </br> `cmake -B build -S . ; cmake --build build`
-4. Eiti į naujai sukurtą /build/ direktoriją ir joje paleisti <strong>OOPUžduotis1.exe</strong> :)
+1. Atsiųsti [g++ kompiliatorių](https://sourceforge.net/projects/mingw-w64/)
+2. Atsisiųsti [CMake (Bent v. 3.29)](https://cmake.org/download/)
+3. [Klonuoti šio projekto direktoriją](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+4. Atsidaryti komandinę eilutę (cmd arba powershell) ir į ją įvesti </br> `cmake -B build -S . ; cmake --build build`
+5. Eiti į naujai sukurtą /build/ direktoriją ir joje paleisti <strong>OOPUžduotis1.exe</strong> :)
 
 # Projekto naudojimosi instrukcijos
 Įjungus programą turėtumete matyti meniu su galimais pasirinkimais:
