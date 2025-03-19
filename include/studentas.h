@@ -21,6 +21,7 @@ public:
     Studentas() = default;
     ~Studentas() {
         pazymiai_.clear();
+        // Nemanau, kad destruktoriui verta dar kazka kito keisti, nes vienintelis dalykas, kuris yra dinamineje atmintyje yra pazymiu vektorius (nors ir jis turi savo destruktoriu kiek zinau).
     }
 
     // Seteriai
