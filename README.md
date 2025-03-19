@@ -34,7 +34,7 @@ Greitis gali priklausyti nuo sugeneruotų failų pažymių kiekio.
 |-------------|-------------------------|
 | CPU         | Intel i7-13700H 2.40GHz |
 | RAM         | 16 GB DDR5              |
-| HDD         | SSD                     |
+| HDD         | SSD (NVMe)              |
 
 # V1.1 Testavimai (Nauji)
 (Greiciai pateikiami kaip 3 testu vidurkis) </br>
