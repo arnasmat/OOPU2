@@ -2,29 +2,29 @@
 template <typename Container>
 void studentu_ivestis(Container& studentai) {
     while(true) {
-        Studentas laikinas_studentas{};
+        Studentas laikinas_studentas;
 
         vardu_ivestis(studentai, laikinas_studentas);
 
-        if(laikinas_studentas.vardas == "n" && !studentai.empty()) {
+        if(laikinas_studentas.getVardas() == "n" && !studentai.empty()) {
             return;
         }
 
         std::cout<<"Iveskite pazymius (jeigu norite baigti pazymiu ivedima, iveskite -1): ";
-        int pazymys{0};
+        uint8_t pazymys{0};
+        std::vector<uint8_t> pazymiai{};
         while(true) {
             pazymys = ivesties_patikrinimas(1,10, -1);
-            while(pazymys == -1 && laikinas_studentas.pazymiai.empty()) {
+            while(pazymys == -1 && pazymiai.empty()) {
                 std::cout << "Iveskite bent viena pazymi: ";
                 pazymys = ivesties_patikrinimas(1, 10);
             }
             if(pazymys == -1)
                 break;
-            laikinas_studentas.pazymiai.push_back(pazymys);
+            laikinas_studentas.addPazymys(pazymys);
         }
         std::cout<<"Iveskite egzamino rezultata: ";
-        laikinas_studentas.egzamino_rezultatas = 0;
-        laikinas_studentas.egzamino_rezultatas = ivesties_patikrinimas(1, 10);
+        laikinas_studentas.setEgzaminoRezultatas(ivesties_patikrinimas(1, 10));
         studentai.push_back(laikinas_studentas);
     }
 }
@@ -36,7 +36,7 @@ void studentu_ivestis_random_2(Container& studentai) {
 
         vardu_ivestis(studentai, laikinas_studentas);
 
-        if(laikinas_studentas.vardas == "n" && !studentai.empty()) {
+        if(laikinas_studentas.getVardas() == "n" && !studentai.empty()) {
             return;
         }
 
@@ -68,11 +68,11 @@ void studentu_ivestis_random_3(Container& studentai) {
         for(int i=0; i<zmoniu_kiekis; i++) {
             Studentas laikinas_studentas{};
             if(random(mt)%2 == 1) {
-                laikinas_studentas.vardas = vyriski_vardai[random_vyriskas_vardas(mt)];
-                laikinas_studentas.pavarde = vyriskos_pavardes[random_vyriska_pavarde(mt)];
+                laikinas_studentas.setVardas(vyriski_vardai[random_vyriskas_vardas(mt)]);
+                laikinas_studentas.setPavarde(vyriskos_pavardes[random_vyriska_pavarde(mt)]);
             } else {
-                laikinas_studentas.vardas = moteriski_vardai[random_moteriskas_vardas(mt)];
-                laikinas_studentas.pavarde = moteriskos_pavardes[random_moteriska_pavarde(mt)];
+                laikinas_studentas.setVardas(moteriski_vardai[random_moteriskas_vardas(mt)]);
+                laikinas_studentas.setPavarde(moteriskos_pavardes[random_moteriska_pavarde(mt)]);
             }
 
             random_pazymiu_generavimas(laikinas_studentas);
@@ -107,15 +107,15 @@ void studentu_ivestis_is_failo(Container& studentai, const fs::path& ivesties_fa
             std::istringstream ivestis(linija);
             std::string vardas{}, pavarde{};
             ivestis>>vardas;
-            laikinas_studentas.vardas = vardas;
+            laikinas_studentas.setVardas(vardas);
             ivestis>>pavarde;
-            laikinas_studentas.pavarde = pavarde;
-            int pazymys{0};
+            laikinas_studentas.setPavarde(pavarde);
+            uint8_t pazymys{0};
             while(ivestis>>pazymys) {
-                laikinas_studentas.pazymiai.push_back(pazymys);
+                laikinas_studentas.addPazymys(pazymys);
             }
-            laikinas_studentas.egzamino_rezultatas = laikinas_studentas.pazymiai.back();
-            laikinas_studentas.pazymiai.pop_back();
+            laikinas_studentas.setEgzaminoRezultatas(laikinas_studentas.getPazymiai().back());
+            laikinas_studentas.removePaskutinisPazymys();
             studentai.push_back(laikinas_studentas);
         }
 }

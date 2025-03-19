@@ -2,22 +2,22 @@
 template <typename Container>
 void studentu_rusiavimas(Container& studentai, int rusiavimo_pasirinkimas) {
     auto comparator_vardas = [](const Studentas &a, const Studentas &b) {
-        return a.vardas < b.vardas;
+        return a.getVardas() < b.getVardas();
     };
     auto comparator_pavarde = [](const Studentas &a, const Studentas &b) {
-        return a.pavarde < b.pavarde;
+        return a.getPavarde() < b.getPavarde();
     };
     auto comparator_vidurkis_asc = [](const Studentas &a, const Studentas &b) {
-        return a.galutinis_vidurkis < b.galutinis_vidurkis;
+        return a.getGalutinisVidurkis() < b.getGalutinisVidurkis();
     };
     auto comparator_vidurkis_desc = [](const Studentas &a, const Studentas &b) {
-        return a.galutinis_vidurkis > b.galutinis_vidurkis;
+        return a.getGalutinisVidurkis() > b.getGalutinisVidurkis();
     };
     auto comparator_mediana_asc = [](const Studentas &a, const Studentas &b) {
-        return a.galutinis_mediana < b.galutinis_mediana;
+        return a.getGalutinisMediana() < b.getGalutinisMediana();
     };
     auto comparator_mediana_desc = [](const Studentas &a, const Studentas &b) {
-        return a.galutinis_mediana > b.galutinis_mediana;
+        return a.getGalutinisMediana() > b.getGalutinisMediana();
     };
 
     switch(rusiavimo_pasirinkimas) {

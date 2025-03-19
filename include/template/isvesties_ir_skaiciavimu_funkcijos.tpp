@@ -118,28 +118,28 @@ void studentu_kategorizacija(Container& studentai, const int rodyti_pasirinkimas
     if(rusiuoti_pagal == 3) {
         auto partition_iteratorius = std::partition_point(
             studentai.begin(), studentai.end(),
-            [](const Studentas& studentas) {return studentas.galutinis_vidurkis>=5.0f;}
+            [](const Studentas& studentas) {return studentas.getGalutinisVidurkis()>=5.0f;}
             );
             islaike_studentai.assign(studentai.begin(), partition_iteratorius);
             neislaike_studentai.assign(partition_iteratorius, studentai.end());
     } else if(rusiuoti_pagal == 4) {
         auto partition_iteratorius = std::partition_point(
             studentai.begin(), studentai.end(),
-            [](const Studentas& studentas) {return studentas.galutinis_vidurkis<=5.0f;}
+            [](const Studentas& studentas) {return studentas.getGalutinisVidurkis()<=5.0f;}
             );
         neislaike_studentai.assign(studentai.begin(), partition_iteratorius);
         islaike_studentai.assign(partition_iteratorius, studentai.end());
     }else if(rusiuoti_pagal==5){
         auto partition_iteratorius = std::partition_point(
             studentai.begin(), studentai.end(),
-            [](const Studentas& studentas) {return studentas.galutinis_mediana>=5.0f;}
+            [](const Studentas& studentas) {return studentas.getGalutinisMediana()>=5.0f;}
             );
             islaike_studentai.assign(studentai.begin(), partition_iteratorius);
             neislaike_studentai.assign(partition_iteratorius, studentai.end());
     } else if(rusiuoti_pagal==6){
         auto partition_iteratorius = std::partition_point(
             studentai.begin(), studentai.end(),
-            [](const Studentas& studentas) {return studentas.galutinis_mediana<=5.0f;}
+            [](const Studentas& studentas) {return studentas.getGalutinisMediana()<=5.0f;}
             );
         neislaike_studentai.assign(studentai.begin(), partition_iteratorius);
         islaike_studentai.assign(partition_iteratorius, studentai.end());

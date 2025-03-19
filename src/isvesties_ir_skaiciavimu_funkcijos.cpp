@@ -49,23 +49,23 @@ void failu_generavimas(int studentu_kiekis){
 
 float galutinis_pazymys_vidurkis(Studentas &studentas) {
     unsigned int pazymiu_suma{0};
-    if(studentas.pazymiai.empty()) return 0;;
-    for(const auto &i: studentas.pazymiai) {
+    if(studentas.getPazymiai().empty()) return 0;;
+    for(const auto &i: studentas.getPazymiai()) {
         pazymiu_suma+=i;
     }
-    return static_cast<float>(static_cast<float>(pazymiu_suma) / static_cast<float>(studentas.pazymiai.size()) * 0.4 + studentas.egzamino_rezultatas * 0.6);
+    return static_cast<float>(static_cast<float>(pazymiu_suma) / static_cast<float>(studentas.getPazymiai().size()) * 0.4 + studentas.getEgzaminoRezultatas() * 0.6);
 }
 
 float galutinis_pazymys_mediana(Studentas &studentas) {
     float mediana{0};
-    std::sort(studentas.pazymiai.begin(), studentas.pazymiai.end());
-if(studentas.pazymiai.size() % 2 == 0) {
-    mediana = static_cast<float>(studentas.pazymiai[studentas.pazymiai.size() / 2]
-        + studentas.pazymiai[studentas.pazymiai.size() / 2 - 1]) / 2.0f;
+    std::sort(studentas.getPazymiai().begin(), studentas.getPazymiai().end());
+if(studentas.getPazymiai().size() % 2 == 0) {
+    mediana = static_cast<float>(studentas.getPazymiai()[studentas.getPazymiai().size() / 2]
+        + studentas.getPazymiai()[studentas.getPazymiai().size() / 2 - 1]) / 2.0f;
 } else {
-    mediana = static_cast<float>(studentas.pazymiai[studentas.pazymiai.size() / 2]);
+    mediana = static_cast<float>(studentas.getPazymiai()[studentas.getPazymiai().size() / 2]);
 }
-    return mediana * 0.4f + static_cast<float>(studentas.egzamino_rezultatas) * 0.6f;
+    return mediana * 0.4f + static_cast<float>(studentas.getEgzaminoRezultatas()) * 0.6f;
 }
 
 //Void isvestis ir isvesties_meniu implementuota .tpp faile
