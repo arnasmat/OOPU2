@@ -36,6 +36,19 @@ Greitis gali priklausyti nuo sugeneruotų failų pažymių kiekio.
 | RAM         | 16 GB DDR5              |
 | HDD         | SSD                     |
 
+# V1.1 Testavimai (Nauji)
+(Greiciai pateikiami kaip 3 testu vidurkis) </br>
+(Nesuprantu kodel failo dydis mazeja lol.) </br>
+
+| Kompiliavimo vėliava | Greitis 100000 (Struct) | Greitis 1000000 (Struct) | Exe dydis(Struct) | Greitis 100000 (Class) | Greitis 1000000 (Class) | Exe dydis (Class) |
+|----------------------|-------------------------|--------------------------|-------------------|------------------------|-------------------------|-------------------|
+| Jokios               | 1.32934s                | 14.872s                  | 998 KB            | 1.54536s               | 17.443s                 | 505 KB            |
+| O1                   | 0.91309s                | 6.2466s                  | 347 KB            | 0.65874s               | 7.4615s                 | 239 KB            |
+| O2                   | 0.53205s                | 6.5285s                  | 329 KB            | 0.63472s               | 7.4984s                 | 258 KB            |
+| O3                   | 0.53682s                | 6.4576s                  | 262 KB            | 0.64214s               | 7.3300s                 | 290 KB            |
+
+# V1.0 Testavimai (Seni)
+
 # Strategiju testavimo rezultatai
 (Testai daryti be -O3. Programos naudojimo metu rezultatai bus greitesni.)
 
