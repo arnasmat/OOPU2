@@ -158,9 +158,6 @@ void nuskaitymo_ir_isvesties_testavimas(std::vector<Studentas>& temp_studentai, 
                 testavimo_laikas+=sugaistas_laikas;
                 //Greiciausias vis tiek senas metodas lol
                 studentu_kategorizacija_testavimas(temp_studentai, 3, 3,testavimo_laikas, i);
-                // studentu_kategorizacija_1_strategija_testavimas(temp_studentai, 3, 3,testavimo_laikas, i);
-                // studentu_kategorizacija_2_strategija_testavimas(temp_studentai, 3, 3,testavimo_laikas, i);
-                // studentu_kategorizacija_3_strategija_testavimas(temp_studentai, 3, 3,testavimo_laikas, i);
                 // std::cout<<i<<" irasu testavimo laikas: "<<testavimo_laikas.count()<<"\n";
                 testavimo_laiku_suma +=testavimo_laikas;
                 temp_studentai.clear();
