@@ -31,8 +31,8 @@ void studentu_ivestis(std::vector<Studentas>&  studentai) {
         }
 
         std::cout<<"Iveskite pazymius (jeigu norite baigti pazymiu ivedima, iveskite -1): ";
-        uint8_t pazymys{0};
-        std::vector<uint8_t> pazymiai{};
+        int pazymys{0};
+        std::vector<int> pazymiai{};
         while(true) {
             pazymys = ivesties_patikrinimas(1,10, -1);
             while(pazymys == -1 && pazymiai.empty()) {
@@ -126,12 +126,12 @@ void studentu_ivestis_is_failo(std::vector<Studentas>& studentai, const fs::path
             ivestis>>pavarde;
             laikinas_studentas.setVardas(vardas);
             laikinas_studentas.setPavarde(pavarde);
-            uint8_t pazymys{0};
+            int pazymys{0};
             while(ivestis>>pazymys) {
                 laikinas_studentas.addPazymys(pazymys);
             }
-                laikinas_studentas.setEgzaminoRezultatas(laikinas_studentas.getPazymiai().back());
-                laikinas_studentas.removePaskutinisPazymys();
+            laikinas_studentas.setEgzaminoRezultatas(laikinas_studentas.getPazymiai().back());
+            laikinas_studentas.removePaskutinisPazymys();
             studentai.push_back(laikinas_studentas);
         }
 }

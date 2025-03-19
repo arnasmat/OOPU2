@@ -17,13 +17,13 @@ namespace fs = std::filesystem;
 class Studentas {
 private:
     std::string vardas_{}, pavarde_{};
-    std::vector<uint8_t> pazymiai_{};
-    uint8_t egzamino_rezultatas_{};
+    std::vector<int> pazymiai_{};
+    int egzamino_rezultatas_{};
     float galutinis_vidurkis_{};
     float galutinis_mediana_{};
 public:
     // Konstruktorius ir Destrultorius
-    Studentas(std::string vardas, std::string pavarde, std::vector<uint8_t> pazymiai, uint8_t egzamino_rezultatas)
+    Studentas(std::string vardas, std::string pavarde, std::vector<int> pazymiai, int egzamino_rezultatas)
     : vardas_(std::move(vardas)), pavarde_(std::move(pavarde)), pazymiai_(std::move(pazymiai)), egzamino_rezultatas_(egzamino_rezultatas) {}
     Studentas() = default;
     ~Studentas() {
@@ -40,13 +40,13 @@ public:
     // Geteriai
     [[nodiscard]] std::string getVardas () const {return vardas_;}
     [[nodiscard]] std::string getPavarde () const {return pavarde_;}
-    [[nodiscard]] std::vector<uint8_t> getPazymiai() const {return pazymiai_;}
-    [[nodiscard]] uint8_t getEgzaminoRezultatas() const {return egzamino_rezultatas_;}
+    [[nodiscard]] std::vector<int> getPazymiai() const {return pazymiai_;}
+    [[nodiscard]] int getEgzaminoRezultatas() const {return egzamino_rezultatas_;}
     [[nodiscard]] float getGalutinisVidurkis() const {return galutinis_vidurkis_;}
     [[nodiscard]] float getGalutinisMediana() const {return galutinis_mediana_;}
 
     // Kitos reikalingos funkcijos
-    void addPazymys(const uint8_t pazymys) {pazymiai_.push_back(pazymys);}
+    void addPazymys(const int pazymys) {pazymiai_.push_back(pazymys);}
     void removePaskutinisPazymys() {pazymiai_.pop_back();}
 
     void calculateGalutinisVidurkis();
