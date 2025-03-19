@@ -14,6 +14,5 @@ void isvesties_meniu(std::vector<Studentas>& studentai, const std::string &isves
 void isvestis(std::vector<Studentas>& studentai, std::ostream& isvesties_metodas, const int rodyti_pasirinkimas);
 void studentu_kategorizacija(std::vector<Studentas>& studentai, const int rodyti_pasirinkimas, const int rusiuoti_pagal);
 
-#include "template/isvesties_ir_skaiciavimu_funkcijos.tpp"
 
 #endif //ISVESTIES_IR_SKAICIAVIMU_FUNKCIJOS_H
