@@ -17,10 +17,8 @@ void testavimo_rezimas(bool& praejo);
 void failu_kurimo_testavimas(const std::vector<int>& kiekiai);
 void ivesties_testavimas(bool& praejo);
 void konteineriu_pasirinkimas_testavimui(const std::vector<int>& kiekiai, bool& praejo);
-void nuskaitymo_ir_isvesties_testavimas(std::vector<int>& temp_studentai, const std::vector<int>& kiekiai, bool& praejo);
-
-/*void studentu_kategorizacija_testavimas(std::vector<Studentas>& studentai, int rodyti_pasirinkimas, int rusiuoti_pagal, std::chrono::duration<double>& testavimo_laikas, int i);*/
-
+void nuskaitymo_ir_isvesties_testavimas(std::vector<Studentas>& temp_studentai, const std::vector<int>& kiekiai, bool& praejo);
+void studentu_kategorizacija_testavimas(std::vector<Studentas>& studentai, const int rodyti_pasirinkimas, const int rusiuoti_pagal, std::chrono::duration<double>& testavimo_laikas, const int i);
 #include <template/testavimo_funkcijos.tpp>
 
 #endif //TESTAVIMO_FUNKCIJOS_H
