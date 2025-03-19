@@ -10,12 +10,9 @@
 #include "ivesties_pagalbines.h"
 
 void failu_generavimas(int studentu_kiekis);
-float galutinis_pazymys_vidurkis(Studentas &studentas);
-float galutinis_pazymys_mediana(Studentas &studentas);
-
-//Apibrezti template faile. Naudoja ne vector, o template
-/* void isvesties_meniu(Container& studentai, const std::string &isvesties_failo_pavadinimas)
- * void isvestis(Container& studentai, std::ostream& isvesties_metodas, const int rodyti_pasirinkimas) */
+void isvesties_meniu(std::vector<Studentas>& studentai, const std::string &isvesties_failo_pavadinimas);
+void isvestis(std::vector<Studentas>& studentai, std::ostream& isvesties_metodas, const int rodyti_pasirinkimas);
+void studentu_kategorizacija(std::vector<Studentas>& studentai, const int rodyti_pasirinkimas, const int rusiuoti_pagal);
 
 #include "template/isvesties_ir_skaiciavimu_funkcijos.tpp"
 

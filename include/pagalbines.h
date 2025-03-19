@@ -34,8 +34,8 @@ public:
     void setVardas(const std::string& vardas) {vardas_ = vardas;}
     void setPavarde(const std::string& pavarde) {pavarde_ = pavarde;}
     void setEgzaminoRezultatas(const unsigned int egzamino_rezultatas) {egzamino_rezultatas_ = egzamino_rezultatas;}
-    void setGalutinisVidurkis(const float galutinis_vidurkis) {galutinis_vidurkis_ = galutinis_vidurkis;}
-    void setGalutinisMediana(const float galutinis_mediana) {galutinis_mediana_ = galutinis_mediana;}
+    /*void setGalutinisVidurkis(const float galutinis_vidurkis) {galutinis_vidurkis_ = galutinis_vidurkis;}
+    void setGalutinisMediana(const float galutinis_mediana) {galutinis_mediana_ = galutinis_mediana;}*/
 
     // Geteriai
     [[nodiscard]] std::string getVardas () const {return vardas_;}
@@ -47,7 +47,10 @@ public:
 
     // Kitos reikalingos funkcijos
     void addPazymys(const uint8_t pazymys) {pazymiai_.push_back(pazymys);}
-    void removePaskutinisPazymys() {pazymiai_.pop_back();}};
+    void removePaskutinisPazymys() {pazymiai_.pop_back();}
+
+    void calculateGalutinisVidurkis();
+    void calculateGalutinisMediana();
 };
 
 extern std::random_device rd;
